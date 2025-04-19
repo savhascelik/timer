@@ -1,0 +1,8 @@
+<!-- Bu dosya bir yer tutucu, gerçek ses dosyası değil -->
+<!-- İkili MP3 dosyasını doğrudan buraya ekleyemiyoruz -->
+<!-- Lütfen https://notificationsounds.com/ gibi bir siteden bildirim sesi indirip -->
+<!-- 'src/main/static/notification.mp3' konumuna ekleyin veya aşağıdaki komutları kullanın -->
+
+<!-- Windows'ta PowerShell ile örnek ses dosyası indirme:
+Invoke-WebRequest -Uri "https://notificationsounds.com/storage/sounds/file-sounds-1150-pristine.mp3" -OutFile "src/main/static/notification.mp3"
+--> 
