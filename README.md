@@ -62,6 +62,10 @@ npm run build:linux
 - Vite - Build tool
 - Electron Builder - Application packaging
 
+## Acknowledgments
+
+This project was initially based on [electron-vue-template](https://github.com/Deluze/electron-vue-template) by [Deluze](https://github.com/Deluze), which provided a solid foundation for the application's structure. The original template is available under the MIT license.
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
