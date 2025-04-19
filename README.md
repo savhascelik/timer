@@ -72,4 +72,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Author
 
-Savas Celik - [GitHub](https://github.com/savhascelik)
+Savas Hasçelik - [GitHub](https://github.com/savhascelik)
