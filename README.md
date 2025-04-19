@@ -1,77 +1,71 @@
-<div align="center"> 
+# Timer Application
 
-# Electron Vue Template
-  
-<img width="794" alt="image" src="https://user-images.githubusercontent.com/32544586/222748627-ee10c9a6-70d2-4e21-b23f-001dd8ec7238.png">
+A simple desktop timer application built with Electron and Vue.js to help you manage your time efficiently.
 
-A simple starter template for a **Vue3** + **Electron** TypeScript based application, including **ViteJS** and **Electron Builder**.
-</div>
+![Timer Application](screenshots/app_preview.png)
 
-## About
+## Features
 
-This template utilizes [ViteJS](https://vitejs.dev) for building and serving your (Vue powered) front-end process, it provides Hot Reloads (HMR) to make development fast and easy ⚡ 
+- Create timers with custom messages
+- Set timers using 12-hour (AM/PM) or 24-hour format
+- Get notifications when timers are complete
+- View complete alarm history
+- Minimize to system tray for background operation
+- Modern and intuitive user interface
 
-Building the Electron (main) process is done with [Electron Builder](https://www.electron.build/), which makes your application easily distributable and supports cross-platform compilation 😎
+## Installation
 
-## Getting started
+### Windows
+Download the latest `Timer Setup x.x.x.exe` from the [Releases](https://github.com/savhascelik/timer/releases) page and run the installer.
 
-Click the green **Use this template** button on top of the repository, and clone your own newly created repository.
+### Mac and Linux
+Coming soon!
 
-**Or..**
+## Development
 
-Clone this repository: `git clone git@github.com:Deluze/electron-vue-template.git`
+### Prerequisites
+- Node.js (v14 or newer)
+- npm or yarn
 
-
-### Install dependencies ⏬
-
+### Setup
 ```bash
+# Clone the repository
+git clone https://github.com/savhascelik/timer.git
+
+# Navigate to the project directory
+cd timer
+
+# Install dependencies
 npm install
-```
 
-### Start developing ⚒️
-
-```bash
+# Start the development server
 npm run dev
 ```
 
-## Additional Commands
-
+### Build
 ```bash
-npm run dev # starts application with hot reload
-npm run build # builds application, distributable files can be found in "dist" folder
+# Build for Windows
+npm run build:win
 
-# OR
+# Build for macOS
+npm run build:mac
 
-npm run build:win # uses windows as build target
-npm run build:mac # uses mac as build target
-npm run build:linux # uses linux as build target
+# Build for Linux
+npm run build:linux
 ```
 
-Optional configuration options can be found in the [Electron Builder CLI docs](https://www.electron.build/cli.html).
-## Project Structure
+## Technologies Used
 
-```bash
-- scripts/ # all the scripts used to build or serve your application, change as you like.
-- src/
-  - main/ # Main thread (Electron application source)
-  - renderer/ # Renderer thread (VueJS application source)
-```
+- Electron - Cross-platform desktop app framework
+- Vue.js - Frontend framework
+- TypeScript - Type-safe JavaScript
+- Vite - Build tool
+- Electron Builder - Application packaging
 
-## Using static files
+## License
 
-If you have any files that you want to copy over to the app directory after installation, you will need to add those files in your `src/main/static` directory.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Files in said directory are only accessible to the `main` process, similar to `src/renderer/assets` only being accessible to the `renderer` process. Besides that, the concept is the same as to what you're used to in your other front-end projects.
+## Author
 
-#### Referencing static files from your main process
-
-```ts
-/* Assumes src/main/static/myFile.txt exists */
-
-import {app} from 'electron';
-import {join} from 'path';
-import {readFileSync} from 'fs';
-
-const path = join(app.getAppPath(), 'static', 'myFile.txt');
-const buffer = readFileSync(path);
-```
+Savas Celik - [GitHub](https://github.com/savhascelik)
