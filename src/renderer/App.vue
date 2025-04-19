@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue';
-import TimerForm from './components/ZamanlayiciForm.vue';
-import AlarmHistory from './components/AlarmGunlugu.vue';
+import TimerForm from './components/TimerForm.vue';
+import AlarmHistory from './components/AlarmHistory.vue';
 
 const activeTab = ref('timer');
 const isMaximized = ref(false);
@@ -31,7 +31,7 @@ function closeWindow() {
 }
 
 // Şu anki zamanı göster
-const currentTime = ref(new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }));
+const currentTime = ref(new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }));
 
 // Her saniye zamanı güncelle
 onMounted(() => {
@@ -43,7 +43,7 @@ onMounted(() => {
   // Bildirim aldığında ekranda göster
   if (electronAPI) {
     electronAPI.onBildirim((mesaj: string) => {
-      console.log('Notification received:', mesaj);
+      console.log('Bildirim alındı:', mesaj);
     });
     
     // Uygulama başlatma bildirimi
@@ -52,7 +52,7 @@ onMounted(() => {
   
   // Her saniye saati güncelle
   setInterval(() => {
-    currentTime.value = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    currentTime.value = new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
   }, 1000);
 });
 </script>

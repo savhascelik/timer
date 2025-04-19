@@ -266,9 +266,10 @@ function bildirimGoster(mainWindow: BrowserWindow | null, mesaj: string) {
   const bildirimPenceresi = new BrowserWindow({
     width: 300,
     height: 100,
+    x: width - 320, // Sağ kenardan 20px içeride
+    y: height - 120, // Alt kenardan 20px içeride
     frame: false,
     transparent: true,
-    maximizable: false,
     alwaysOnTop: true,
     skipTaskbar: true,
     webPreferences: {
@@ -340,7 +341,7 @@ function bildirimGoster(mainWindow: BrowserWindow | null, mesaj: string) {
       <script>
         // Kapanma düğmesini daha güvenilir hale getir
         document.getElementById('kapat-btn').addEventListener('click', () => {
-          window.close();
+          window.electronAPI.bildirimKapat();
         });
         
         // Ses çal
@@ -352,7 +353,9 @@ function bildirimGoster(mainWindow: BrowserWindow | null, mesaj: string) {
         }
         
         // 10 saniye sonra otomatik kapat
-        setTimeout(() => window.close(), 10000);
+        setTimeout(() => {
+          window.electronAPI.bildirimKapat();
+        }, 10000);
       </script>
     </body>
     </html>
@@ -373,7 +376,7 @@ function bildirimGoster(mainWindow: BrowserWindow | null, mesaj: string) {
   
   // Sistem bildirimiyle birlikte ses çal
   notifier.notify({
-    title: 'Zamanlayıcı Bildirimi',
+    title: 'Timer Notification',
     message: mesaj,
     sound: true
   });
